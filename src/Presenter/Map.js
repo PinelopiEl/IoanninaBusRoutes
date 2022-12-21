@@ -1,27 +1,29 @@
-import React, {Component,useState,useEffect,useRef,callBack} from 'react';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
+//import {Layer, NavigationControl,Marker} from 'react-map-gl';
+//import ReactMapGL, {Image} from 'react-map-gl';
+//import MapboxDirectionsFactory from '@mapbox/mapbox-sdk/services/directions';
+//import {lineString as makeLineString} from '@turf/helpers';
+//import stopsCsv from '../files/stop.csv';
+//import sideMenu from '../Menu/SideMenu.js';
+//import { stack as Menu } from 'react-burger-menu';
+//import linesCsv from '../files/lines.csv';
+
+import React, {useState,useEffect,useRef} from 'react';
 import mapboxgl from 'mapbox-gl';
 import "mapbox-gl/dist/mapbox-gl.css";
 import stops from '../files/stops.json';
-import {Layer, NavigationControl,Marker} from 'react-map-gl';
-import ReactMapGL, {Image} from 'react-map-gl';
 import * as turf from '@turf/turf';
-import MapboxDirectionsFactory from '@mapbox/mapbox-sdk/services/directions';
-import {lineString as makeLineString} from '@turf/helpers';
 import './Map.css';
-import sideMenu from '../Menu/SideMenu.js';
-import { stack as Menu } from 'react-burger-menu';
-import linesCsv from '../files/lines.csv';
 import routeCsv from '../files/route.csv';
-import stopsCsv from '../files/stop.csv';
 import Papa from 'papaparse';
+
 //____________________________________________________________________________________________________________________INITIALIZATION OF VARIABLES
-//not used yet , maybe if we are gonna use different bus vehicles with different codes
-var sendFlag;
+
 //call function inside const map for getRoute
 var call;
+//var connectSliderWithMap;
 //for id of bus-line
-var stopID;
+//var stopID;
 var codeLine;
 //array with all codes of each stop in the selected route
 var newstops;
@@ -74,33 +76,31 @@ export async function setWay(code){
   getStops(setStops);
 
 };
-
 //_____________________________________________________________________________________________PARSE ROUTE.CSV-->CREATE ARRAY OF STOP CODES
 //_____________________________________________________________________________________________FITLER STOPS.JSON AND GET COORDS FOR EACH STOP
 //____________________________________________________________________________________________________________________________CALLS GETROUTE
 
 function setStops(recordRoute){
   newstops=[];
-  var stopIDs;
+  //var stopIDs;
   for(var i=0; i < recordRoute.length;i++){
-    if(codeLine== recordRoute[i][2]){
+    if(codeLine=== recordRoute[i][2]){
       newstops=recordRoute[i][6];
       break;
     }
    }
-   console.log(newstops+"setstops")
+   //console.log(newstops+"setstops")
    
    /*for(var i=0;i<stopIDs.length-1;i=i+4){
     routeStops.push(stopIDs[i] +stopIDs[i+1] +stopIDs[i+2] );
   }*/
-  console.log("eimai mesa")
   routeStops=[];
   waypoints=[];
   var way = [];
   console.log(newstops)
   routeStops=newstops.split(',');
-  for(var i=0; i < routeStops.length;i++){
-    const result = Object.values(stops).filter(item => item.code === routeStops[i].toString());
+  for(var j=0; j < routeStops.length;j++){
+    const result = Object.values(stops).filter(item => item.code === routeStops[j].toString());
   
     const lat=Object.entries(result)[0][1].latitude;
     const lon=Object.entries(result)[0][1].longitude;
@@ -131,8 +131,6 @@ function getStops(callBack){
   
 };
 
-
-
 //________________________________________________________________________________________________________________________________DISPLAY ROUTE
 export async function getRoute(code){
     
@@ -148,15 +146,27 @@ export async function getRoute(code){
     const json = await query.json();
     const data = json.matchings[0];
     route = data.geometry;
-  sendFlag = choosenBus.getChoosenB;
-  counter=0;
-  call(route);
+    counter=0;
+    call(route);
 }
 
 
 
+//Gia na exoume prosbasi sto map 
+export const exportMap ={
+  exmap: null ,
 
+  get getMap(){
+    console.log("Get gia na parw sto map to map apo ControlSlider")
+    return this.exmap;
+  },
 
+  set setMap(newMap) {
+    this.exmap = newMap;
+    console.log("mesas sto settt")
+}
+
+}
 
 
 //_________________________________________________________________________________________________________________________________CONST MAPP
@@ -166,12 +176,10 @@ export const  Mapp = () => {
  
   const mapContainer = useRef(null);
   const [map, setMap] = useState(null);
-  const [flag, setFlag] = useState(1);
 
   //___________________________________________________________________________________________________________SETUP OUR MAP
   useEffect(() => {
     mapboxgl.accessToken ='pk.eyJ1IjoiZGFuYWl0b3UiLCJhIjoiY2w5ZWp3NG5oMGdhZjNucGJxOXh2MTRuZCJ9.4DkyNzrCoBvSBIEy0r3IPg'
-    //pk.eyJ1IjoiZGFuYWl0b3UiLCJhIjoiY2w5ZWp3NG5oMGdhZjNucGJxOXh2MTRuZCJ9.4DkyNzrCoBvSBIEy0r3IPg'
 
     const initializeMap = ({ setMap, mapContainer }) => {
       const map = new mapboxgl.Map({
@@ -186,10 +194,10 @@ export const  Mapp = () => {
         map.resize();
       });
 
-      //___________________________________________________________________________________________________________ZOOM IN ,ZOOM OUT
+      //  ZOOM IN ,ZOOM OUT
       map.addControl(new mapboxgl.NavigationControl());
 
-      //___________________________________________________________________________________________________________MARKERS FOR BUS STATIONS
+      //  MARKERS FOR BUS STATIONS
       map.on('load', () => {
 
 
@@ -202,13 +210,14 @@ export const  Mapp = () => {
       });
 
     };
+    
 
     if (!map) initializeMap({ setMap, mapContainer });
 
    
   }, [map]);
 
-
+  exportMap.setMap = map;
   // //______________________________________________________________________________________________________HELPER FOR LAYER OF ROUTE ON MAP
   call  = function(route){
     //console.log(Object.entries(route) +"rout")
@@ -291,8 +300,7 @@ export const  Mapp = () => {
        
     
     }
-    console.log(route+"ekso")
-    animate(point,route);
+    //animate(point,route);
   }
   
   //___________________________________________________________________________________________________________ANIMATION OF BUS ICON
@@ -328,7 +336,7 @@ export const  Mapp = () => {
       
       <div ref={el => (mapContainer.current = el)} style={style} />
       <div/>
-      
+
       
     </div>
     );
