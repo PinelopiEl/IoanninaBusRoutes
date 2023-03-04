@@ -20,8 +20,8 @@ We also used:
 5. Map Matching API
 
 ## Prerequisites
- 1. Node.js
- 2. npm 
+   Node.js
+### `install npm`
  
 ## Report
 A report for the application can be found in /Documentation
