@@ -2,7 +2,7 @@
 
 Ioannina Bus Routes is a web application for the Urban Bus Company of Ioannina, that processes and analyses the data to identify delays, routes with many passengers and consequently incorrect vehicle allocation. It also proposes changes to the timetable and frequency of routes according to demand. In addition, this app can represent the results in various types of diagrams.
 
-##Tools
+## Tools
 
 Ioannina Bus Routes was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 In the project directory, you can run:
@@ -19,12 +19,12 @@ We also used:
 4. Chart JS
 5. Map Matching API
 
-##Prerequisites
+## Prerequisites
  1. Node.js
  2. npm 
  
-##Report
+## Report
 A report for the application can be found in /Documentation
 
-##Demo
+## Demo
 In /Demo directory is a live demo of our application
