@@ -20,7 +20,7 @@ We also used:
 5. Map Matching API
 
 ## Prerequisites
-   Node.js
+You should download Node.js and npm
 ### `install npm`
  
 ## Report
