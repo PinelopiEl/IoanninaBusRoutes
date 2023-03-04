@@ -1,0 +1,188 @@
+.Buttonbox {
+  border: 2px solid #5cbdb9;
+  border-radius: 25px ;
+  position: absolute;
+  margin: 20px;
+  right: 30px;
+  text-decoration-color:rgb(19, 33, 97) ;
+  overflow:hidden;
+  height: 60%;
+  width: 80%;
+  top: 1340px;
+  bottom: 20px;
+  padding: 20px;
+  background-color:#5cbdb9;
+  font-size: medium;
+  align-items: center;
+  
+}
+.RemoveChartsbox {
+border: 2px solid #5cbdb9;
+border-radius: 25px ;
+position: absolute;
+margin: 20px;
+right: 150px;
+text-decoration-color:rgb(19, 33, 97) ;
+overflow:hidden;
+height: 57%;
+width: 20%;
+top: 1345px;
+bottom: 20px;
+padding: 20px;
+background-color:#5cbdb9;
+font-size: medium;
+align-items: center;
+
+}
+
+/*L Lines*/
+.BarboxLines {
+border: 2px solid #a8c0bf;
+border-radius: 25px ;
+position: absolute;
+margin: 20px;
+right: 750px;
+text-decoration-color:rgb(19, 33, 97) ;
+overflow:hidden;
+height: 90%;
+width: 35%;
+top: 1870px;
+bottom: 20px;
+padding: 20px;
+background-color:#a8c0bf;
+font-size: medium;
+align-items: center;
+}
+/*R Routes*/
+.RoutesChart {
+border: 2px solid #a8c0bf;
+border-radius: 25px ;
+position: absolute;
+margin: 20px;
+right: 70px;
+text-decoration-color:rgb(19, 33, 97) ;
+overflow:hidden;
+height: 90%;
+width: 35%;
+top: 1870px;
+bottom: 20px;
+padding: 20px;
+background-color:#a8c0bf;
+font-size: medium;
+align-items: center;
+
+}
+
+/*L Routes*/
+.RoutesOfLine {
+border: 2px solid #5cbdb9;
+border-radius: 25px ;
+position: absolute;
+margin: 20px;
+right: 750px;
+text-decoration-color:rgb(19, 33, 97) ;
+overflow:hidden;
+height: 90%;
+width: 35%;
+top: 2700px;
+bottom: 20px;
+padding: 20px;
+background-color:#a8c0bf;
+font-size: medium;
+align-items: center;
+
+}
+.TwoBars {
+  border: 2px solid #a8c0bf;
+  border-radius: 25px ;
+  position: absolute;
+  margin: 20px;
+  right: 70px;
+  text-decoration-color:rgb(19, 33, 97) ;
+  overflow:hidden;
+  height: 90%;
+  width: 35%;
+  top:2700px;
+  bottom: 20px;
+  padding: 20px;
+  background-color:#a8c0bf;
+  font-size: medium;
+  align-items: center;
+  
+}
+
+/*L PIE*/
+.Piebox {
+  border: 2px solid #a8c0bf;
+  border-radius: 25px ;
+  position: absolute;
+  margin: 20px;
+  right: 750px;
+  text-decoration-color:rgb(19, 33, 97) ;
+  overflow:hidden;
+  height: 90%;
+  width: 35%;
+  top: 3500px;
+  bottom: 20px;
+  padding: 20px;
+  background-color:#a8c0bf;
+  font-size: medium;
+  align-items: center;
+  
+}
+.StopBar {
+  border: 2px solid #a8c0bf;
+  border-radius: 25px ;
+  position: absolute;
+  margin: 20px;
+  right: 70px;
+  text-decoration-color:rgb(19, 33, 97) ;
+  overflow:hidden;
+  height: 90%;
+  width: 35%;
+  top: 3500px;
+  bottom: 20px;
+  padding: 20px;
+  background-color:#a8c0bf;
+  font-size: medium;
+  align-items: center;
+  
+}
+
+
+.PassegersStops{
+  border: 2px solid #a8c0bf;
+  border-radius: 25px ;
+  position: absolute;
+  margin: 20px;
+  right: 750px;
+  text-decoration-color:rgb(19, 33, 97) ;
+  overflow:hidden;
+  height: 90%;
+  width: 35%;
+  top: 4300px;
+  bottom: 20px;
+  padding: 20px;
+  background-color:#a8c0bf;
+  font-size: medium;
+  align-items: center;
+  
+}
+.NextStop {
+  border: 2px solid #a8c0bf;
+  border-radius: 25px ;
+  position: absolute;
+  margin: 20px;
+  right: 70px;
+  text-decoration-color:rgb(19, 33, 97) ;
+  overflow:hidden;
+  height: 90%;
+  width: 35%;
+  top:4300px;
+  bottom: 20px;
+  padding: 20px;
+  background-color:#a8c0bf;
+  font-size: medium;
+  align-items: center;
+  
+}

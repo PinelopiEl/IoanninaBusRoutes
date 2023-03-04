@@ -1,0 +1,44 @@
+body1 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+}
+  
+p {
+
+
+    /*color:rgb(165, 42, 42);*/
+    
+    padding-right: 50%;
+  
+}
+.sched-box {
+    border: 2px solid rgba(11, 238, 151, 0.574);
+    border-radius: 25px ;
+    position: absolute;
+    margin: 20px;
+    right: 340px;
+    text-decoration-color:#5cbdb9 ;
+    
+    overflow:hidden;
+    height:75%;
+    width: 27%;
+    top: 700px;
+    bottom: 20px;
+    padding: 20px;
+    background-color:#5cbdb9;
+    
+    font-size: medium;
+    align-items: center;
+    
+}
+
+
+label {
+    text-align:right;
+    padding-right:20px;
+    display:inline-block;
+    min-width:150px;
+}
+.resizedTextbox {width:400px; height: 40px}

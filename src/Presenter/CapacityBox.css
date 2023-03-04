@@ -1,0 +1,43 @@
+body2 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+}
+
+p {
+
+
+  /*color:rgb(165, 42, 42);*/
+  
+  padding-right: 50%;
+
+}
+.capacity-box {
+  border: 2px solid rgba(11, 238, 151, 0.574);
+  border-radius: 25px ;
+  position: absolute;
+  margin: 20px;
+  right:800px;
+  text-decoration-color:rgb(19, 33, 97) ;
+  
+  overflow:hidden;
+  height: 50%;
+  width: 30%;
+  top: 740px;
+  bottom: 20px;
+  padding: 20px;
+  background-color:#5cbdb9;
+  
+  font-size: medium;
+  align-items: center;
+  
+}
+
+label {
+  text-align:center;
+  padding-right:20px;
+  display:inline-block;
+  min-width:150px;
+}
+.resizedTextbox {width:400px; height: 40px}
